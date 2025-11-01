@@ -1,44 +1,64 @@
-{...}: {
+{ ... }:
+{
   programs.nixvim = {
     globals.mapleader = " ";
     keymaps = [
       {
         mode = "n";
         key = "<leader>n";
-        action = "<cmd>NvimTreeToggle<cr>";
+        action = "<cmd>NvimTreeFindFileToggle<cr>";
       }
 
       {
-        mode = ["n" "i" "v" "t"];
+        mode = [
+          "n"
+          "i"
+          "v"
+          "t"
+        ];
         key = "<c-\\>";
         action = "<cmd>ToggleTerm<cr>";
       }
 
       {
-        mode = ["n" "i" "v"];
+        mode = [
+          "n"
+          "i"
+          "v"
+        ];
         key = "<c-l>";
         action = "<cmd>BufferLineCycleNext<cr>";
       }
 
       {
-        mode = ["n" "i" "v"];
+        mode = [
+          "n"
+          "i"
+          "v"
+        ];
         key = "<c-h>";
         action = "<cmd>BufferLineCyclePrev<cr>";
-      } 
-
+      }
 
       {
-        mode = ["n" "i" "v"];
+        mode = [
+          "n"
+          "i"
+          "v"
+        ];
         key = "<c-j>";
         action = "<cmd>BufferLineGoToBuffer 1<cr>";
-      } 
-
+      }
 
       {
-        mode = ["n" "i" "v"];
+        mode = [
+          "n"
+          "i"
+          "v"
+        ];
         key = "<c-k>";
         action = "<cmd>BufferLineGoToBuffer -1<cr>";
-      } 
+      }
 
       {
         mode = "n";
@@ -65,9 +85,9 @@
       }
 
       {
-          mode = "n";
-          key = "<leader>c";
-          action = ":hori term ";
+        mode = "n";
+        key = "<leader>c";
+        action = ":hori term ";
       }
     ];
   };
