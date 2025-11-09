@@ -20,9 +20,30 @@
       };
     };
     shellAliases = {
-      meow = "hyfetch";
+      c = "clear";
+      meow = "_meow";
+
+      hf = "nix flake update --flake ${config.home.homeDirectory}/.config/home-manager";
+      hs = "nh home switch ~/.config/home-manager";
+      hz = "z ~/.config/home-manager";
+
+      nsu = "_nsu";
+      ns = "sudo nixos-rebuild switch";
+
+      se = "sudoedit";
+      v = "nvim";
     };
     extraConfig = with config.stylix.base16Scheme.palette; ''
+      def _meow () {
+          clear
+          hyfetch
+      }
+
+      def _nsu () {
+          sudo nix-channel --add https://channels.nixos.org/nixos-unstable nixos
+          sudo nixos-rebuild switch --upgrade
+      }
+
       def _nix_your_shell (command: string, args: list<string>) {
           if not (which nix-your-shell | is-empty) {
               let args = ["--"] ++ $args
