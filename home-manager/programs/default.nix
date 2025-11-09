@@ -1,6 +1,7 @@
 {
   imports = [
     ./nvim
+    ./rofi
 
     ./btop.nix
     ./carapace.nix
@@ -11,7 +12,6 @@
     ./mako.nix
     ./ncspot.nix
     ./nushell.nix
-    ./rofi.nix
     ./starship.nix
     ./tmux.nix
     ./vesktop.nix
