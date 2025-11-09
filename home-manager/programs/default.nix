@@ -11,6 +11,7 @@
     ./hyfetch.nix
     ./mako.nix
     ./ncspot.nix
+    ./nix-search-tv.nix
     ./nushell.nix
     ./starship.nix
     ./tmux.nix
