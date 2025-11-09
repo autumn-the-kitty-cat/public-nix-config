@@ -8,7 +8,7 @@
   home.file.".config/hypr/hyprland.conf".text = ''
     $mainMod=SUPER
     $menu=rofi -show drun
-    $powerMenu=rofi -show power-menu -modi power-menu:rofi-power-menu
+    $powerMenu=rofi -show power-menu -modi "power-menu:rofi-power-menu --choices lockscreen/suspend/reboot/shutdown"
     $screenshot=slurp | grim -g - - | wl-copy
     $terminal=foot
     animations {
@@ -137,7 +137,6 @@
     exec=swww img ${config.stylix.image}
     exec-once=waybar
     exec=pkill waybar; waybar
-    exec-once=flameshot
     windowrulev2=suppressevent maximize, class:.*
     #windowrulev2 = opacity 0.9, class:(com.mitchellh.ghostty)
   '';
