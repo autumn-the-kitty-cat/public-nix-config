@@ -7,7 +7,6 @@
     ./carapace.nix
     ./fastfetch.nix
     ./foot.nix
-    ./ghostty.nix
     ./hyfetch.nix
     ./mako.nix
     ./ncspot.nix
