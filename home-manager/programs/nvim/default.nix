@@ -1,4 +1,5 @@
-{...}: {
+{ ... }:
+{
   imports = [
     ./cmp
     ./plugins
