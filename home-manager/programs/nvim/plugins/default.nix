@@ -1,5 +1,7 @@
-{...}: {
+{ ... }:
+{
   imports = [
+
     ./codesnap.nix
     ./rustaceanvim.nix
     ./telescope.nix
