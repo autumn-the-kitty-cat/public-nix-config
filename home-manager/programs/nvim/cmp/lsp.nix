@@ -1,4 +1,5 @@
-{...}: {
+{ inputs, ... }:
+{
   programs.nixvim.plugins = {
     lsp = {
       enable = true;
@@ -11,6 +12,7 @@
         };
         pyright.enable = true;
         mlir_lsp_server.enable = true;
+        nixd.enable = true;
         nil_ls.enable = true;
         clangd = {
           enable = true;
@@ -20,11 +22,11 @@
         };
         eslint.enable = true;
         hls = {
-            enable = true;
-            installGhc = true;
-            settings.haskell = {
-                formattingProvider = "fourmolu";
-            };
+          enable = true;
+          installGhc = true;
+          settings.haskell = {
+            formattingProvider = "fourmolu";
+          };
         };
         html.enable = true;
         jsonls.enable = true;
@@ -34,28 +36,40 @@
         zls.enable = true;
       };
     };
-    cmp-emoji = {enable = true;};
+    cmp-emoji = {
+      enable = true;
+    };
     cmp = {
       enable = true;
       settings = {
         autoEnableSources = true;
-        experimental = {ghost_text = true;};
+        experimental = {
+          ghost_text = true;
+        };
         performance = {
           debounce = 60;
           fetchingTimeout = 200;
         };
-        snippet = {expand = "luasnip";};
-        formatting = {fields = ["kind" "abbr" "menu"];};
+        snippet = {
+          expand = "luasnip";
+        };
+        formatting = {
+          fields = [
+            "kind"
+            "abbr"
+            "menu"
+          ];
+        };
         sources = [
-          {name = "nvim_lsp";}
-          {name = "emoji";}
-          
+          { name = "nvim_lsp"; }
+          { name = "emoji"; }
+
           {
             name = "buffer"; # text within current buffer
             option.get_bufnrs.__raw = "vim.api.nvim_list_bufs";
             keywordLength = 3;
           }
-          
+
           {
             name = "path"; # file system paths
             keywordLength = 3;
@@ -68,8 +82,8 @@
         ];
 
         window = {
-            completion.__raw = "cmp.config.window.bordered()";
-            documentation.__raw = "cmp.config.window.bordered()";
+          completion.__raw = "cmp.config.window.bordered()";
+          documentation.__raw = "cmp.config.window.bordered()";
         };
 
         mapping = {
@@ -84,11 +98,21 @@
         };
       };
     };
-  cmp-nvim-lsp = {enable = true;}; # lsp
-  cmp-buffer = {enable = true;};
-  cmp-path = {enable = true;}; # file system paths
-    cmp_luasnip = {enable = true;}; # snippets
-    cmp-cmdline = {enable = false;}; # autocomplete for cmdline
+    cmp-nvim-lsp = {
+      enable = true;
+    }; # lsp
+    cmp-buffer = {
+      enable = true;
+    };
+    cmp-path = {
+      enable = true;
+    }; # file system paths
+    cmp_luasnip = {
+      enable = true;
+    }; # snippets
+    cmp-cmdline = {
+      enable = false;
+    }; # autocomplete for cmdline
     luasnip = {
       enable = true;
       settings = {
