@@ -1,4 +1,4 @@
-{ inputs, ... }:
+{ ... }:
 {
   programs.nixvim.plugins = {
     lsp = {
